@@ -1,0 +1,18 @@
+korea = democratic_republics
+korea.ownership = people
+korea.power.all().source = people
+
+method.which_is(to_be(korea.people)).by(law)
+nation.duties.add(protect(people.where(foreign)).by(law))
+
+korea.territory = korean_peninsula + korean_peninsula.islands()
+
+korea.aimings.add(reunion.by(stratigy.by(democratic_default_rules)))
+
+korea.tries.add(peace_keeping.where(international))
+korea.do(deny(war.which_is(invasion)))
+
+force.which_is(national).duty.add(guarantee.where(nation).which_is(sacred))
+force.which_is(national).duty.add(defence.where(korea.territory).which_is(sacred))
+force.which_is(national).do(politics.which_is(neutral))
+
