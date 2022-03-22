@@ -12,7 +12,7 @@ korea.aimings.add(reunion.by(stratigy.by(democratic_default_rules)))
 korea.tries.add(peace_keeping.where(international))
 korea.do(deny(war.which_is(invasion)))
 
-force.which_is(national).duty.add(guarantee.where(nation).which_is(sacred))
-force.which_is(national).duty.add(defence.where(korea.territory).which_is(sacred))
+force.which_is(national).duties.add(guarantee.where(nation).which_is(sacred))
+force.which_is(national).duties.add(defence.where(korea.territory).which_is(sacred))
 force.which_is(national).do(politics.which_is(neutral))
 
