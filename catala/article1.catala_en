@@ -1,0 +1,57 @@
+> Include: constitutional_declarations.catala_en
+
+# 1장 총강
+# 제1조
+# ①대한민국은 민주공화국이다.
+# ②대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.
+
+# Chapter 1
+# Article 1
+# Paragraph 1 Republic of korea is Democratic republics
+# Paragraph 2 People have sovereignty of Republic of korea and every authority came from people.
+
+# Chapter, Article, Paragraph, SubParagraph
+# 조문체계의 영어 번역 출처 https://elaw.klri.re.kr/kor_service/lawsystem.do
+
+```catala
+declaration scope Article1Paragraph1:
+  input contry content Contry
+  output government_type content GovernmentType
+
+scope Article1Paragraph1:
+  definition government_type equals GovernmentType {
+      -- form_of_government: Republic
+      -- ownership_of_government: People
+  }
+
+declaration scope ArticleParagraph2:
+  output sovereignty content PoliticalGroup
+  output source_of_authority PoliticalGroup
+
+scope Article1Paragraph2:
+  definition sovereignty equals People
+  definition source_of_authority equals People
+
+
+declaration scope Test1:
+  a1p1 scope Article1Paragraph1
+  output gt
+
+scope Test1:
+  definition gt equals a1p1.government_type
+
+  assertion gt.form_of_government = Republic
+  assertion gt.ownership_of_government = People
+
+declaration scope Test2:
+  a1p2 scope Article1Paragraph2
+  output sover content PoliticalGroup
+  output soa content PoliticalGroup
+
+scope Test2:
+  definition sover equals a1p2.sovereignty
+  definition soa equals a1p2.source_of_authority
+
+  assertion sover = People
+  assertion soa = People
+```

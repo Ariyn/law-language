@@ -1,0 +1,29 @@
+# constitutional_declarations.catala_en
+# 헌법 작성에 필요한 선언파일
+
+# 대한민국은 공화국이다 라는 법이 있다면
+# 대한민국 = 공화국, 공화국 contry_type{ -- ruled_by: king}
+# 이런식으로 체계적으로 정리되면 좋을 듯
+
+```catala
+declaration enumeration PoliticalGroup:
+-- People
+-- Elites
+-- Novel
+-- Dictator
+-- King
+-- NoOne
+
+declaration enumeration FormOfGovernment:
+-- Rebublic
+-- Monarchy
+
+declaration GovernmentType:
+  data form_of_government content FormOfGovernment
+  data ownership_of_government content PoliticalGroup
+
+declaration structure Contry:
+  data government_type content GovernmentType
+  data sovereignty_owner content PoliticalGroup
+  data source_of_authority content PoliticalGroup
+```
