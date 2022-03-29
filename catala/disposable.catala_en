@@ -1,0 +1,24 @@
+declaration enumeration DisposableUsable:
+- Able
+- Unable
+
+declaration enumeration SalesSize:
+- retail
+- wholesale
+
+declaration enumeration SalesCategory:
+- NewCarSales
+- UsedCarSales
+
+declaration struct Sales:
+  data size content SalesSize
+  data category content SalesCategory
+
+declaration scope DisposableUsableCheck:
+  input sales content Sales
+  output usable condition
+
+scope DisposableUsableCheck:
+  definition usable equals match sales.category with pattern
+    -- NewCarSales of category: true
+    -- usedCarSales of category: true
